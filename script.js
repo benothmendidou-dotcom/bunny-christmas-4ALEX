@@ -31,7 +31,7 @@ function createSnow() {
         setTimeout(() => snow.remove(), 5000);
     }
 }
-setInterval(createSnow, 200);
+setInterval(createSnow, 600);
 
 // Twinkling lights (already in CSS)
 
