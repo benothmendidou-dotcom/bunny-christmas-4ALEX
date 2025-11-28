@@ -20,7 +20,7 @@ let giftsOpened = 0;
 // Snow effect
 function createSnow() {
     const snowContainer = document.getElementById('snow-container');
-    for (let i = 0; i < 100; i++) {
+    for (let i = 0; i < 25; i++) {
         const snow = document.createElement('div');
         snow.classList.add('snowflake');
         snow.innerHTML = '❄️';
