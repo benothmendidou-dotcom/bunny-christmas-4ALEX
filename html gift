@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christmas for MY bunny!! 🐰</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="snow-container"></div>
+    <div id="lights"></div>
+    
+    <div class="container">
+        <header>
+            <h1>Merry Christmas, MY CUTIEEEEE❤🦐 </h1>
+            <p>Dear Sweertheart Alex Rosado, you're the magic in every snowflake this holiday, Can't wait for forever with you and get forever toghter my pattotie!! :)</p>
+        </header>
+
+        <div id="countdown">
+            <h2>Christmas Morning Countdown..</h2>
+            <div id="timer">Getting ready...</div>
+            <p>Until I wake up next to my favorite gift!! ❤️</p>
+        </div>
+
+        <div id="gallery">
+            <h2>Our Moments</h2>
+            <!-- Photos will be added via JS -->
+        </div>
+
+        <div id="gifts-container">
+            <!-- Clickable gifts added via JS -->
+        </div>
+
+        <div id="final-letter" class="hidden">
+            <h2>Our Story Starts Here ❤️</h2>
+            <p>MERRY CHRISTMAS!! You did so much this year and you deserve every gift you get!! I hope you're having a really great day by the time you're seeing this and I'm proud for what we both came too so far, it's our third Christmas together!! ❤️</p>
+            <p>August 4, 2023 the day it all started, the day I wished we're forever together until does us apart.</p>
+            <img id="final-photo" src="" alt="Us Forever" class="full-photo">
+            <p class="signature">Forever Christmas, forever yours<br>- Mondher, you love!</p>
+        </div>
+
+        <audio id="bg-music" loop>
+            <source src="https://www.youtube.com/watch?v=njtFtKqAEr0" type="audio/mpeg"> <!-- Fallback; in reality, use a direct MP3 link or embed -->
+        </audio>
+        <button id="music-toggle">🎵 (Playing)</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
