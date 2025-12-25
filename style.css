@@ -1,10 +1,10 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Georgia', serif;
-    background: linear-gradient(to bottom, #e3f2fd 0%, #f3e5f5 100%);
-    color: #333;
-    overflow-x: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #ffe4e1 0%, #fff0f5 100%); /* Soft pink Christmas */
+    color: #4b0082;
+    overflow: hidden;
     position: relative;
 }
 
@@ -21,8 +21,9 @@ body {
 .snowflake {
     position: absolute;
     color: #fff;
-    font-size: 20px;
-    animation: fall linear infinite;
+    font-size: 1.5em;
+    animation: fall 10s linear infinite;
+    opacity: 0.8;
 }
 
 @keyframes fall {
@@ -37,109 +38,98 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        90deg,
-        transparent,
-        transparent 10px,
-        rgba(255, 215, 0, 0.3) 10px,
-        rgba(255, 215, 0, 0.3) 12px
-    );
-    animation: twinkle 2s infinite;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: twinkle 3s infinite alternate;
     z-index: 1;
 }
 
 @keyframes twinkle {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 1; }
+    0% { opacity: 0.3; }
+    100% { opacity: 0.7; }
 }
 
 .container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 30px;
     position: relative;
     z-index: 10;
     text-align: center;
+    background: rgba(255,255,255,0.7);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 h1 {
-    color: #c2185b;
-    font-size: 2.5em;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    color: #ff1493;
+    font-size: 3em;
+    text-shadow: 1px 1px 2px #fff;
+    margin-bottom: 10px;
 }
 
 h2 {
-    color: #d32f2f;
-    border-bottom: 2px dashed #ffeb3b;
-    padding-bottom: 10px;
+    color: #c71585;
+    font-size: 2em;
 }
 
-#countdown {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px;
-    border-radius: 20px;
-    margin: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-#timer {
-    font-size: 3em;
-    color: #e91e63;
-    font-weight: bold;
-}
-
-#gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
-    margin: 20px 0;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
 }
 
 .gallery-photo {
-    width: 100%;
-    height: 200px;
+    width: 200px;
+    height: 300px;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    animation: fadeInPhoto 1s ease-in;
     transition: transform 0.3s;
 }
 
 .gallery-photo:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
+}
+
+@keyframes fadeInPhoto {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 #gifts-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
     margin: 40px 0;
 }
 
 .gift {
-    width: 80px;
-    height: 80px;
-    background: #ff6f00;
-    border: 3px solid #d32f2f;
-    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(#ff4500, #ff6347); /* Cute red-orange gift */
+    border-radius: 15px;
     cursor: pointer;
     position: relative;
-    animation: bounce 2s infinite;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    animation: bounceGift 1.5s infinite;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .gift::after {
-    content: '🎁';
+    content: '🎁🐰';
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 40px;
+    font-size: 50px;
 }
 
-@keyframes bounce {
+@keyframes bounceGift {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-15px); }
 }
 
 .message-popup {
@@ -147,90 +137,74 @@ h2 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.95);
-    padding: 20px;
-    border-radius: 15px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    background: #fffaf0;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     z-index: 100;
-    max-width: 300px;
+    max-width: 400px;
     text-align: center;
+    animation: popIn 0.5s ease;
     display: none;
 }
 
 .message-popup img {
     width: 100%;
-    max-height: 200px;
-    object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .close-btn {
-    background: #e91e63;
+    background: #ff69b4;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
-#final-letter {
-    background: rgba(255, 248, 220, 0.9);
+@keyframes popIn {
+    from { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+    to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+
+#love-letter {
+    background: rgba(255, 182, 193, 0.2);
     padding: 30px;
     border-radius: 20px;
-    margin: 20px 0;
-    animation: fadeIn 1s ease-in;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-.full-photo {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    border-radius: 15px;
-    margin: 20px 0;
+    margin: 40px 0;
+    animation: fadeIn 2s ease;
 }
 
 .signature {
     font-style: italic;
-    color: #c2185b;
-    font-size: 1.2em;
+    color: #ff1493;
+    font-size: 1.5em;
+    margin-top: 20px;
+}
+
+#music-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ffb6c1;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    z-index: 20;
 }
 
 .hidden {
     display: none;
 }
 
-#music-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #ffeb3b;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-size: 1.2em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    z-index: 20;
-}
-
-/* Bunny ears for fun */
-header::before {
-    content: '🐰';
-    font-size: 3em;
-    display: block;
-    margin-bottom: 10px;
-}
-
-/* Mobile friendly */
+/* Mobile tweaks */
 @media (max-width: 600px) {
-    h1 { font-size: 2em; }
-    #timer { font-size: 2em; }
-    .gift { width: 60px; height: 60px; }
+    h1 { font-size: 2.2em; }
+    .gallery-photo { width: 150px; height: 200px; }
+    .gift { width: 80px; height: 80px; }
 }
