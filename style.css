@@ -4,6 +4,10 @@ body {
     font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #ffe4e1 0%, #fff0f5 100%); /* Soft pink Christmas */
     color: #4b0082;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    min-height: 100vh;
     position: relative;
 }
 
