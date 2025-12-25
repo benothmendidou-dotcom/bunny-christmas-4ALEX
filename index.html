@@ -5,6 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merry Christmas, Bunny 🐰</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Music unmute on first interaction (browser requirement) -->
+    <script>
+        document.addEventListener('click', function enableMusic() {
+            const audio = document.getElementById('bg-music');
+            audio.muted = false;
+            audio.volume = 0.4; // Soft & festive (adjust 0.1–1.0 if you want)
+            audio.play().catch(() => {}); // In case of any error
+            // Remove listener after first click so it doesn't fire again
+            document.removeEventListener('click', enableMusic);
+        }, { once: true });
+    </script>
 </head>
 <body>
     <div id="snow-container"></div>
@@ -12,12 +24,12 @@
     
     <div class="container">
         <header>
-            <h1>Merry Christmas You Pretty Lady!🌹 </h1>
+            <h1>Merry Christmas You Pretty Lady! 🌹</h1>
             <p>Alex, you're my forever gift. Open the presents for surprises! ❤️</p>
         </header>
 
         <div id="gallery" class="gallery">
-            <!-- Photos added via JS with animations -->
+            <!-- Photos added via JS -->
         </div>
 
         <div id="gifts-container">
@@ -26,20 +38,18 @@
 
         <div id="love-letter">
             <h2>Our Story That Rebegins On A Midnight</h2>
-            <p>MERRY CHRISTMAS!! You did so much this year and you deserve every gift you get!! I hope you're having a really great day by the time you're seeing this and I'm proud of what you become year by year, i hope you had a good jolly day!!❤ </p>
-            <p>August 4, 2023 — the day it all started, the day I wished we're forever together until death does us apart, we will make it work this time, we are together in this 💜 </p>
-            <p class="signature">Forever Christmas, Forever By Your Side✨ </p>
+            <p>MERRY CHRISTMAS!! You did so much this year and you deserve every gift you get!! I hope you're having a really great day by the time you're seeing this and I'm proud of what you become year by year, i hope you had a good jolly day!! ❤</p>
+            <p>August 4, 2023 — the day it all started, the day I wished we're forever together until death does us apart, we will make it work this time, we are together in this 💜</p>
+            <p class="signature">Forever Christmas, Forever By Your Side ✨</p>
         </div>
 
-        <audio id="bg-music" loop autoplay muted preload="auto">  <!-- Add "muted" here -->
-    <source src="ytmp3free.cc_jingle-bells-instrumental-lyrics-youtubemp3free.org.mp3" type="audio/mpeg">
-</audio>
-<button id="music-toggle">🎵 Playing Softly</button>
-    </div>
-    
-    <script src="script.js"></script>
-</body>
-</html>
+        <!-- Background Music -->
+        <audio id="bg-music" loop autoplay muted preload="auto">
+            <source src="music.mp3" type="audio/mpeg">
+            Your browser does not support audio.
+        </audio>
+
+        <button id="music-toggle">🎵 Jingle Bells Playing</button>
     </div>
 
     <script src="script.js"></script>
