@@ -132,5 +132,26 @@ document.addEventListener('click', () => {
     }).catch(() => {});
 }, { once: true });
 
+// Plushie squeak counter 🐰
+let squeakCount = 0;
+const plushie = document.getElementById('plushie');
+const squeakCounter = document.getElementById('squeak-counter');
+const squeakSound = document.getElementById('squeak-sound');
+
+plushie.addEventListener('click', () => {
+    squeakCount++;
+    document.getElementById('counter-num').textContent = squeakCount;
+    squeakCounter.classList.remove('hidden');
+    
+    // Play squeak
+    squeakSound.currentTime = 0;
+    squeakSound.play().catch(() => {}); // Silent fail if blocked
+    
+    // Hearts pop!
+    createHeart();
+    
+    // Hide counter after 3 sec
+    setTimeout(() => squeakCounter.classList.add('hidden'), 3000);
+});
 // All ready! Site loads with snow, photos, gifts, music toggle.
 console.log('Bunny Christmas site ready! 🎄❤️');
