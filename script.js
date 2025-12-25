@@ -12,11 +12,11 @@ const photos = [
 ];
 
 const messages = [
-    "Forever Christmas, forever yours",
-    "If I ever had a Christmas, you're the first gift I want in my list!",
-    "Santa gave you a break to celebrate my little elf? :)",
-    "It's snowing, and yet you're there making me melt",
-    "Forever my cutie bunny"
+    "I hope you've had a jolly day you pretty bunny!",
+    "If I ever had a Christmas, You're the first gift I want in my list!",
+    "Luckily santa gave his elfs and opprotunity to rest on this holiday, or we'd never see you!",
+    "It's snowing, But i'll always try my best to make our hearts melt in love together!",
+    "If anyone came to ask me, i'd say you're the best thing happened in my life!"
 ];
 
 let giftsOpened = 0;
